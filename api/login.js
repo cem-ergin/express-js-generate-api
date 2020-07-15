@@ -30,7 +30,9 @@ router.post('/', (req, res) => {
                       });
                     } else if (userCountData.length!=0) {
                       res.status(200);
-                      const accessToken = jwt.sign({ username: userCountData[0].username,  cAt: userCountData[0].createdAt }, accessTokenSecret);
+                      const accessToken = jwt.sign({ username: userCountData[0].username,  cAt: userCountData[0].createdAt }, req.app.get('secretKey'),{
+                        expiresIn : 72000
+                      });
                       res.json({
                         status: "success",
                         token : accessToken,
