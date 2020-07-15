@@ -4,9 +4,9 @@ var mysql = require("mysql");
 
 var connection = mysql.createPool({
     host     : 'localhost',
-    user     : 'root',
-    password : 'gurhan123',
-    database : 'bilgiyarismasi'
+    user     : '', // USER ismini buraya giriyorsun localde çalışacaksan genel de ismi ROOT dur.
+    password : '',  // MYSQL e bağlanırken girilen şifre
+    database : 'bilgiyarismasi' // bağlamak istediğin database ismini buraya yaz
   });
 
 
